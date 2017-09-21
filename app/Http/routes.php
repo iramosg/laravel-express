@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('Ola/{nome}', 'TestController@index');
+
+Route::get('Notas', 'TestController@notas');
+
+Route::get('Blog', 'PostsController@index');
