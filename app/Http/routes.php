@@ -13,8 +13,14 @@
 
 
 Route::get('/', 'PostsController@index');
+Route::get('/home', 'PostsController@index');
 
-Route::group(['prefix'=>'admin'], function() {
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController'
+]);
+
+Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function() {
 
 	Route::group(['prefix'=>'posts'], function(){
 		Route::get('', ['as'=> 'admin.posts.index', 'uses' => 'PostsAdminController@index']);

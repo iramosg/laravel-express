@@ -24,9 +24,8 @@
 	@include('admin.posts._form')
 
 	<div class="form-group">
-		{!! Form::label('tags', 'tags' ['class' => 'control-label']) !!}
+		{!! Form::label('tags', 'Tags: ', ['class' => 'control-label']) !!}
 		{!! Form::textarea('tags', null, ['class'=>'form-control'])!!}
-		}
 	</div>
 
 	<div class="form-group">
